@@ -50,7 +50,6 @@ class AppTheme implements AppMode {
 
   @override
   ThemeData lightTheme() {
-    // TODO: implement lightTheme
     throw UnimplementedError();
   }
 }

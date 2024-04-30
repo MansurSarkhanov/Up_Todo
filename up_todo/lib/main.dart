@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:up_todo/app_router.dart';
+import 'package:up_todo/core/config/app_config.dart';
+import 'package:up_todo/core/constants/theme/app_theme.dart';
 
 void main() {
+  AppConfig.initial();
   runApp(const MyApp());
 }
 
@@ -9,12 +13,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Up todo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-    );
+    return MaterialApp.router(routerConfig: appRouter, title: 'Up todo', theme: AppTheme().darkTheme());
   }
 }

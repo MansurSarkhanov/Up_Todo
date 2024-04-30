@@ -1,4 +1,7 @@
 final class OnboardingStrings {
+  //SplashPage
+  static const String splashTitle = 'Up Todo';
+
   static const String onboarding1Title = 'Manage your tasks';
   static const String onboarding2Title = 'Create daily routine';
   static const String onboarding3Title = 'Orgonaize your tasks';
