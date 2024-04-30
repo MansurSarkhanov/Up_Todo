@@ -8,14 +8,20 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;  
     return Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(ImagePath.logo.toPathPng()),
-            const Text(
+            Image.asset(
+              ImagePath.logo.toPathPng(),
+              width: 90,
+              height: 90,
+            ),
+            Text(
               OnboardingStrings.splashTitle,
+              style: textTheme.bodyLarge,
             )
           ],
         ),
