@@ -12,7 +12,12 @@ class AppTheme implements AppMode {
   ThemeData darkTheme() {
     return ThemeData(
       elevatedButtonTheme: ElevatedButtonThemeData(
+      
         style: ButtonStyle(
+          
+          padding: MaterialStateProperty.all(EdgeInsets.zero),
+          shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(4))),
+          
           backgroundColor: MaterialStateProperty.resolveWith(
             (states) {
               if (states.contains(MaterialState.pressed)) {
@@ -27,10 +32,12 @@ class AppTheme implements AppMode {
       scaffoldBackgroundColor: AppColors.bgColor,
       textTheme: TextTheme(
         bodyLarge: GoogleFonts.lato(
+
             textStyle: const TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.w700,
           fontSize: 40,
+
         )),
         bodyMedium: GoogleFonts.lato(
             textStyle: const TextStyle(
@@ -41,7 +48,7 @@ class AppTheme implements AppMode {
         bodySmall: GoogleFonts.lato(
             textStyle: const TextStyle(
           color: Colors.white,
-          fontWeight: FontWeight.w300,
+          fontWeight: FontWeight.w400,
           fontSize: 16,
         )),
       ),

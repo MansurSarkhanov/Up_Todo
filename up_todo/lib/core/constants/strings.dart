@@ -1,6 +1,6 @@
 final class OnboardingStrings {
   //SplashPage
-  static const String splashTitle = 'Up Todo';
+  static const String splashTitle = 'UpTodo';
 
   static const String onboarding1Title = 'Manage your tasks';
   static const String onboarding2Title = 'Create daily routine';
@@ -9,4 +9,12 @@ final class OnboardingStrings {
   static const String onboarding2Subtitle = 'In Uptodo  you can create your personalized routine to stay productive';
   static const String onboarding3Subtitle =
       'You can organize your daily tasks by adding your tasks into separate categories';
+
+  static const String skip = 'SKIP';
+  static const String next = 'NEXT';
+  static const String getStarted = 'GET STARTED';
+
+
+
+
 }
