@@ -7,14 +7,15 @@ import 'package:up_todo/presentation/components/or_divider.dart';
 
 import '../../components/input/custom_field.dart';
 
-class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  RegisterPage({super.key});
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Padding(
@@ -25,10 +26,17 @@ class LoginPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                LoginStrings.login,
+                RegisterStrings.register,
                 style: textTheme.bodyMedium,
               ),
-              sizedBoxH(50),
+              sizedBoxH(24),
+              Text(
+                RegisterStrings.email,
+                style: textTheme.bodySmall,
+              ),
+              sizedBoxH(8),
+              CustomField(hintText: RegisterStrings.hintUsername, controller: _emailController),
+              sizedBoxH(24),
               Text(
                 LoginStrings.email,
                 style: textTheme.bodySmall,
@@ -47,12 +55,12 @@ class LoginPage extends StatelessWidget {
                 isShowIcon: false,
               ),
               sizedBoxH(50),
-              const AuthButton(text: LoginStrings.login),
-              sizedBoxH(50),
+              const AuthButton(text: RegisterStrings.register),
+              sizedBoxH(24),
               const OrDivider(),
-              sizedBoxH(50),
+              sizedBoxH(24),
               const AuthButton(
-                text: LoginStrings.login,
+                text: RegisterStrings.login,
                 isGoogle: true,
               ),
               const Spacer(),
@@ -63,15 +71,15 @@ class LoginPage extends StatelessWidget {
                       textAlign: TextAlign.center,
                       text: TextSpan(children: [
                         TextSpan(
-                          text: LoginStrings.anAccount,
+                          text: RegisterStrings.alreadyAccount,
                           style: textTheme.bodySmall?.copyWith(color: Colors.grey.shade400),
                         ),
                         TextSpan(
-                            text: " ${LoginStrings.register}",
+                            text: " ${RegisterStrings.login}",
                             style: textTheme.bodySmall,
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
-                                context.go('register');
+                                context.go('login');
                               }),
                       ])),
                 ],

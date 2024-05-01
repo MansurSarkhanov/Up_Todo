@@ -25,3 +25,18 @@ final class LoginStrings {
   static const String anAccount = "Don’t have an account?";
   static const String register = ' Register';
 }
+
+final class RegisterStrings {
+  static const String register = ' Register';
+
+  static const String username = 'Username';
+  static const String hintUsername = 'Enter your Username';
+
+  static const String email = 'Email address';
+  static const String password = 'Password';
+  static const String hintEmail = 'Enter your email';
+
+  static const String loginGoogle = 'Login with Google';
+  static const String alreadyAccount = "Already have an account?";
+  static const String login = ' Login';
+}
