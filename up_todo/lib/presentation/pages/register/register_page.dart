@@ -80,8 +80,8 @@ class RegisterPage extends StatelessWidget {
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
                                 context.goNamed('login');
-                              }),
-                      ])),
+                              },),
+                      ],),),
                 ],
               )
             ],
