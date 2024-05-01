@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:up_todo/core/constants/routes.dart';
 import 'package:up_todo/presentation/pages/splash/splash_page.dart';
 
 import 'presentation/pages/login/login_page.dart';
@@ -9,28 +10,28 @@ import 'presentation/pages/register/register_page.dart';
 final appRouter = GoRouter(
   routes: [
     GoRoute(
-      path: '/',
+      path: AppRoutes.splash.path,
       name: 'splash',
       pageBuilder: (context, state) => const MaterialPage(
         child: SplashPage(),
       ),
     ),
     GoRoute(
-      path: '/onboarding',
+      path: AppRoutes.onboarding.path,
       name: 'onboarding',
       pageBuilder: (context, state) => const MaterialPage(
         child: OnboardingPage(),
       ),
     ),
     GoRoute(
-      path: '/login',
+      path: AppRoutes.login.path,
       name: 'login',
       pageBuilder: (context, state) => MaterialPage(
         child: LoginPage(),
       ),
     ),
     GoRoute(
-      path: '/register',
+      path: AppRoutes.register.path,
       name: 'register',
       pageBuilder: (context, state) => MaterialPage(
         child: RegisterPage(),

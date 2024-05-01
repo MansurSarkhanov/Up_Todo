@@ -71,7 +71,7 @@ class LoginPage extends StatelessWidget {
                             style: textTheme.bodySmall,
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
-                                context.go('register');
+                                context.goNamed('register');
                               }),
                       ])),
                 ],
