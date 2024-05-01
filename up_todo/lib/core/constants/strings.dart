@@ -13,8 +13,15 @@ final class OnboardingStrings {
   static const String skip = 'SKIP';
   static const String next = 'NEXT';
   static const String getStarted = 'GET STARTED';
+}
 
+final class LoginStrings {
+  static const String login = 'Login';
+  static const String email = 'Email address';
+  static const String password = 'Password';
+  static const String hintEmail = 'Enter your email';
 
-
-
+  static const String loginGoogle = 'Login with Google';
+  static const String anAccount = "Don’t have an account?";
+  static const String register = ' Register';
 }

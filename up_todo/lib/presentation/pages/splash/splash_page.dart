@@ -19,6 +19,7 @@ class _SplashPageState extends State<SplashPage> {
       context.goNamed('onboarding');
     });
   }
+  
 
   @override
   Widget build(BuildContext context) {
