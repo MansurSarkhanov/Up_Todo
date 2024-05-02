@@ -2,8 +2,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:up_todo/core/constants/strings.dart';
-import 'package:up_todo/presentation/components/button/auth_button.dart';
-import 'package:up_todo/presentation/components/or_divider.dart';
 
 import '../../components/input/custom_field.dart';
 
@@ -61,14 +59,14 @@ class _RegisterPageState extends State<RegisterPage> {
                 isShowIcon: false,
               ),
               sizedBoxH(50),
-              const AuthButton(text: RegisterStrings.register),
-              sizedBoxH(24),
-              const OrDivider(),
-              sizedBoxH(24),
-              const AuthButton(
-                text: RegisterStrings.login,
-                isGoogle: true,
-              ),
+              // const AuthButton(text: RegisterStrings.register),
+              // sizedBoxH(24),
+              // const OrDivider(),
+              // sizedBoxH(24),
+              // const AuthButton(
+              //   text: RegisterStrings.login,
+              //   isGoogle: true,
+              // ),
               const Spacer(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

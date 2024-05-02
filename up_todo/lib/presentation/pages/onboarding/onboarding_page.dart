@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:up_todo/bloc/profile/profile_notifier.dart';
 import 'package:up_todo/core/constants/colors.dart';
 import 'package:up_todo/core/constants/strings.dart';
 import 'package:up_todo/presentation/model/onboard_model.dart';
@@ -24,10 +26,10 @@ class OnboardingPage extends StatelessWidget {
               child: SmoothPageIndicator(
                 controller: controller,
                 count: onboardItem.length,
-                effect: const ExpandingDotsEffect(
+                effect: ExpandingDotsEffect(
                   dotHeight: 4,
                   dotWidth: 20,
-                  dotColor: Colors.white,
+                  dotColor: context.watch<ProfileNotifier>().isDarkMode ? Colors.white : Colors.grey.shade400,
                   activeDotColor: AppColors.primaryColor,
                 ),
               ),
@@ -48,6 +50,7 @@ class OnboardingPage extends StatelessWidget {
                     ),
                   ),
                 ),
+               
                 ElevatedButton(
                   onPressed: () {
                     currentIndex++;

@@ -5,10 +5,11 @@ import 'package:up_todo/core/constants/strings.dart';
 import 'package:up_todo/core/utility/extension/icon_ext.dart';
 
 class AuthButton extends StatefulWidget {
-  const AuthButton({super.key, required this.text, this.isGoogle = false});
+  const AuthButton({super.key, required this.text, this.isGoogle = false, required this.onTap});
 
   final String text;
   final bool isGoogle;
+  final VoidCallback onTap;
   @override
   State<AuthButton> createState() => _AuthButtonState();
 }
@@ -17,7 +18,7 @@ class _AuthButtonState extends State<AuthButton> {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-if (widget.isGoogle) {
+    if (widget.isGoogle) {
       return InkWell(
         child: Container(
           decoration: BoxDecoration(
@@ -31,7 +32,6 @@ if (widget.isGoogle) {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SvgPicture.asset(IconPath.google.toPathSvg()),
-              
                 const SizedBox(
                   width: 8,
                 ),
@@ -43,7 +43,7 @@ if (widget.isGoogle) {
       );
     }
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: widget.onTap,
       child: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 16.0),
