@@ -46,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
                   hintText: 'Enter Email',
                   controller: _emailController,
                   validator: (value) {
-                    if (value == null || value.isEmpty || value.length < 6) {
+                    if (value == null || value.isEmpty) {
                       return "Email adrees is requierd";
                     }
 
@@ -76,7 +76,6 @@ class _LoginPageState extends State<LoginPage> {
                     onTap: () {
                       _formKey.currentState!.save();
                       if (_formKey.currentState!.validate()) {
-                        print('sdfsf');
                       }
                     },
                     text: LoginStrings.login),

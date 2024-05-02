@@ -31,6 +31,8 @@ class CustomField extends StatelessWidget {
           borderSide: BorderSide(color: Colors.grey),
         ),
         hintText: hintText,
+        
+        errorStyle: const TextStyle(color: Colors.red, fontSize: 14),
         hintStyle: textTheme.bodySmall?.copyWith(color: Colors.grey),
         suffixIcon: (isShowIcon ?? false) ? const Icon(Icons.visibility) : const SizedBox.shrink(),
       ),
