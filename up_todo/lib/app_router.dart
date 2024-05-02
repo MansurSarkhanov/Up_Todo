@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:up_todo/core/constants/routes.dart';
 import 'package:up_todo/presentation/pages/splash/splash_page.dart';
@@ -12,30 +11,23 @@ final appRouter = GoRouter(
     GoRoute(
       path: AppRoutes.splash.path,
       name: 'splash',
-      pageBuilder: (context, state) => const MaterialPage(
-        child: SplashPage(),
-      ),
+      builder: (context, state) => const SplashPage(),
     ),
     GoRoute(
       path: AppRoutes.onboarding.path,
       name: 'onboarding',
-      pageBuilder: (context, state) => const MaterialPage(
-        child: OnboardingPage(),
-      ),
+      builder: (context, state) => const OnboardingPage(),
     ),
     GoRoute(
       path: AppRoutes.login.path,
       name: 'login',
-      pageBuilder: (context, state) => MaterialPage(
-        child: LoginPage(),
-      ),
+      builder: (context, state) => const LoginPage(),
+
     ),
     GoRoute(
       path: AppRoutes.register.path,
       name: 'register',
-      pageBuilder: (context, state) => MaterialPage(
-        child: RegisterPage(),
-      ),
+      builder: (context, state) => const RegisterPage(),
     ),
   ],
 );
