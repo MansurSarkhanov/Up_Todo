@@ -3,7 +3,6 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 final class AuthDataSource {
   final _firebaseAuth = FirebaseAuth.instance;
-  final GoogleSignIn _googleSignIn = GoogleSignIn();
   Future<User?> loginUser({required String email, required String password}) async {
     final request = await _firebaseAuth.signInWithEmailAndPassword(
       email: email,

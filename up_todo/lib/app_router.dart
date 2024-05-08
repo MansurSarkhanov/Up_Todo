@@ -10,23 +10,23 @@ final appRouter = GoRouter(
   routes: [
     GoRoute(
       path: AppRoutes.splash.path,
-      name: 'splash',
+      name: AppRoutes.splash.name,
       builder: (context, state) => const SplashPage(),
     ),
     GoRoute(
       path: AppRoutes.onboarding.path,
-      name: 'onboarding',
+      name: AppRoutes.onboarding.name,
       builder: (context, state) => const OnboardingPage(),
     ),
     GoRoute(
       path: AppRoutes.login.path,
-      name: 'login',
+      name: AppRoutes.login.name,
       builder: (context, state) => const LoginPage(),
 
     ),
     GoRoute(
       path: AppRoutes.register.path,
-      name: 'register',
+      name: AppRoutes.register.name,
       builder: (context, state) => const RegisterPage(),
     ),
   ],

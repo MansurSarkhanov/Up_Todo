@@ -1,9 +1,12 @@
 enum AppRoutes {
-  splash(path: '/'),
-  onboarding(path: '/onboarding'),
-  login(path: '/login'),
-  register(path: '/register');
+  splash(path: '/', name: 'splash'),
+  onboarding(path: '/onboarding', name: 'onboarding'),
+  login(path: '/login', name: 'login'),
+  register(path: '/register', name: 'register'),
+  ;
 
-  const AppRoutes({required this.path});
+  const AppRoutes({required this.path, required this.name});
   final String path;
+  final String name;
+
 }
