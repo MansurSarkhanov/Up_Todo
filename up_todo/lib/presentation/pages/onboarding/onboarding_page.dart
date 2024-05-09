@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:up_todo/bloc/profile/profile_notifier.dart';
-import 'package:up_todo/core/constants/colors.dart';
 import 'package:up_todo/core/constants/strings.dart';
+import 'package:up_todo/core/constants/theme/theme_ext.dart';
 import 'package:up_todo/presentation/model/onboard_model.dart';
 
 class OnboardingPage extends StatelessWidget {
@@ -26,11 +24,10 @@ class OnboardingPage extends StatelessWidget {
               child: SmoothPageIndicator(
                 controller: controller,
                 count: onboardItem.length,
-                effect: ExpandingDotsEffect(
+                effect: const ExpandingDotsEffect(
                   dotHeight: 4,
                   dotWidth: 20,
-                  dotColor: context.watch<ProfileNotifier>().isDarkMode ? Colors.white : Colors.grey.shade400,
-                  activeDotColor: AppColors.primaryColor,
+                  // activeDotColor: AppColors.primaryColor,
                 ),
               ),
             ),
@@ -42,11 +39,10 @@ class OnboardingPage extends StatelessWidget {
               children: [
                 TextButton(
                   onPressed: () {},
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 24),
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 24),
                     child: Text(
                       OnboardingStrings.skip,
-                      style: textTheme.bodySmall?.copyWith(color: Colors.grey),
                     ),
                   ),
                 ),
@@ -94,13 +90,14 @@ class OnboardingPage extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 40.0),
                     child: Text(
                       onboardItem[index].title,
-                      style: textTheme.bodyMedium,
+                      style: context.typography.bodyMedium,
                       textAlign: TextAlign.center,
                     ),
                   ),
                   Text(
                     onboardItem[index].description,
-                    style: textTheme.bodySmall,
+                    style: context.typography.bodySmall,
+
                     textAlign: TextAlign.center,
                   ),
                   const Spacer(),

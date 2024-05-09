@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:up_todo/core/constants/colors.dart';
 import 'package:up_todo/core/constants/strings.dart';
 import 'package:up_todo/core/utility/extension/icon_ext.dart';
 
@@ -24,7 +23,7 @@ class _AuthButtonState extends State<AuthButton> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(4),
             color: Colors.transparent,
-            border: Border.all(color: AppColors.primaryColor),
+            // border: Border.all(color: AppColors.primaryColor),
           ),
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
