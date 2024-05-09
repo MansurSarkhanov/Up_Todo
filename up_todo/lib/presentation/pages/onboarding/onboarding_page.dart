@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:up_todo/bloc/profile/theme/theme_scope.dart';
 import 'package:up_todo/core/constants/strings.dart';
 import 'package:up_todo/core/constants/theme/theme_ext.dart';
 import 'package:up_todo/presentation/model/onboard_model.dart';
@@ -10,10 +11,9 @@ class OnboardingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
+    final themeMode = ThemeScope.of(context);
     final PageController controller = PageController();
     int currentIndex = 0;
-
     return Scaffold(
       floatingActionButton: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -24,10 +24,11 @@ class OnboardingPage extends StatelessWidget {
               child: SmoothPageIndicator(
                 controller: controller,
                 count: onboardItem.length,
-                effect: const ExpandingDotsEffect(
+                effect: ExpandingDotsEffect(
                   dotHeight: 4,
                   dotWidth: 20,
-                  // activeDotColor: AppColors.primaryColor,
+                  dotColor: themeMode.appColors.unLinerColor,
+                  activeDotColor: themeMode.appColors.linerColor,
                 ),
               ),
             ),
@@ -39,14 +40,14 @@ class OnboardingPage extends StatelessWidget {
               children: [
                 TextButton(
                   onPressed: () {},
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 24),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 24),
                     child: Text(
                       OnboardingStrings.skip,
+                      style: context.typography.bodySmall.copyWith(fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
-               
                 ElevatedButton(
                   onPressed: () {
                     currentIndex++;
@@ -62,7 +63,7 @@ class OnboardingPage extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 24),
                     child: Text(
                       OnboardingStrings.next,
-                      style: textTheme.bodySmall,
+                      style: context.typography.bodySmall.copyWith(fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
@@ -97,7 +98,6 @@ class OnboardingPage extends StatelessWidget {
                   Text(
                     onboardItem[index].description,
                     style: context.typography.bodySmall,
-
                     textAlign: TextAlign.center,
                   ),
                   const Spacer(),

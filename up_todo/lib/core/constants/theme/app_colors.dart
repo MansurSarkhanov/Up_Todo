@@ -70,7 +70,7 @@ class AppDarkColors extends AppColors {
     super.bgColor = const Color(0xFF121212),
     super.primaryColor = const Color(0xFF8875FF),
     super.primaryColor50 = const Color(0xFF8687E7),
-    super.unLinerColor = const Color(0xFFAFAFAF),
+    super.unLinerColor = Colors.white,
     super.linerColor = const Color(0xFF8875FF),
     super.inputColor = const Color(0xFF1D1D1D),
   });

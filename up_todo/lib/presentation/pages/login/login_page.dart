@@ -1,7 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:up_todo/bloc/profile/theme/theme_scope.dart';
 import 'package:up_todo/core/constants/strings.dart';
+import 'package:up_todo/core/constants/theme/theme_ext.dart';
 import 'package:up_todo/presentation/components/button/auth_button.dart';
 import 'package:up_todo/presentation/components/or_divider.dart';
 
@@ -20,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
   final GlobalKey<FormState> _formKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
+    final themeMode = ThemeScope.of(context);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Padding(
@@ -34,12 +36,12 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 Text(
                   LoginStrings.login,
-                  style: textTheme.bodyMedium,
+                  style: context.typography.bodyMedium,
                 ),
                 sizedBoxH(50),
                 Text(
                   LoginStrings.email,
-                  style: textTheme.bodySmall,
+                  style: context.typography.bodySmall,
                 ),
                 sizedBoxH(8),
                 CustomField(
@@ -56,7 +58,8 @@ class _LoginPageState extends State<LoginPage> {
                 sizedBoxH(24),
                 Text(
                   LoginStrings.password,
-                  style: textTheme.bodySmall,
+                  style: context.typography.bodySmall,
+
                 ),
                 sizedBoxH(8),
                 CustomField(
@@ -97,11 +100,11 @@ class _LoginPageState extends State<LoginPage> {
                         children: [
                           TextSpan(
                             text: LoginStrings.anAccount,
-                            style: textTheme.bodySmall?.copyWith(color: Colors.grey.shade400),
+                            style: themeMode.appTypography.bodySmall.copyWith(color: Colors.grey.shade400),
                           ),
                           TextSpan(
                             text: " ${LoginStrings.register}",
-                            style: textTheme.bodySmall,
+                            style: themeMode.appTypography.bodySmall.copyWith(fontWeight: FontWeight.bold),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
                                 context.goNamed('register');

@@ -9,12 +9,10 @@ import 'bloc/profile/theme/theme_scope_widget.dart';
 
 Future<void> main() async {
   await AppConfig.initial();
-  runApp(
-    ThemeScopeWidget(
+  runApp(ThemeScopeWidget(
     preferences: GetIt.instance<SharedPreferences>(),
     child: const MyApp(),
-  )
-  );
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -33,18 +31,33 @@ class MyApp extends StatelessWidget {
       routerConfig: appRouter,
       title: 'Up Todo',
       themeMode: theme.themeMode,
-      themeAnimationCurve: Curves.fastOutSlowIn,
       theme: ThemeData(
         brightness: Brightness.light,
         extensions: extensions,
         scaffoldBackgroundColor: theme.appColors.bgColor,
       ),
       darkTheme: ThemeData(
-        brightness: Brightness.dark,
-        extensions: extensions,
-        scaffoldBackgroundColor: theme.appColors.bgColor,
-      ),
-      
+          brightness: Brightness.dark,
+          extensions: extensions,
+          scaffoldBackgroundColor: theme.appColors.bgColor,
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ButtonStyle(
+              padding: const MaterialStatePropertyAll(EdgeInsets.zero),
+              shape: MaterialStateProperty.all(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(4),
+                ),
+              ),
+              backgroundColor: MaterialStateProperty.resolveWith(
+                (states) {
+                  if (states.contains(MaterialState.pressed)) {
+                    return theme.appColors.primaryColor50;
+                  }
+                  return theme.appColors.primaryColor50;
+                },
+              ),
+            ),
+          )),
     );
   }
 }
